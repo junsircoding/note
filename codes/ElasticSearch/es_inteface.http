@@ -1,0 +1,109 @@
+@es_server = http://127.0.0.1:9200
+
+# 测试 ES 服务
+GET {{es_server}} HTTP/1.1
+
+# 查看当前节点所有数据库
+GET {{es_server}}/_cat/indices?v HTTP/1.1
+
+# 查看当前数据库所有表
+GET {{es_server}}/_mapping?pretty=true HTTP/1.1
+
+# 新建一个名为 junsircoding 的库
+PUT {{es_server}}/junsircoding HTTP/1.1
+
+# 删除 junsircoding 数据库
+DELETE  {{es_server}}/junsircoding HTTP/1.1
+
+# 向 junsircoding 库中的表 table1 新增一条记录，指定 ID
+PUT {{es_server}}/junsircoding/table1/1 HTTP/1.1
+content-type: application/json
+
+# 向 junsircoding 库中的表 table1 新增一条记录，不指定 ID
+POST {{es_server}}/junsircoding/table1 HTTP/1.1
+content-type: application/json
+
+{
+  "user": "李四",
+  "title": "画家",
+  "desc": "素描教学"
+}
+
+# 查看 ID 为 1 的记录
+GET {{es_server}}/junsircoding/table1/1?pretty=true HTTP/1.1
+
+# 删除 ID 为 1 的记录
+DELETE {{es_server}}/junsircoding/table1/1 HTTP/1.1
+
+# 更新 ID 为 1 的记录
+PUT {{es_server}}/junsircoding/table1/1 HTTP/1.1
+content-type: application/json
+
+{
+  "user": "张三",
+  "title": "工程师",
+  "desc": "数据库管理"
+}
+
+# 返回所有记录
+GET {{es_server}}/junsircoding/table1/_search HTTP/1.1
+
+GET {{es_server}}/junsircoding/_doc/_search HTTP/1.1
+
+# took: 耗时
+# timed_out: 是否超时
+# hits: 命中的记录
+#     total: 记录数
+#     max_score: 最高的匹配程度
+#     hits: 返回的记录组成的数组
+
+# 条件查询
+GET {{es_server}}/junsircoding/table1/_search HTTP/1.1
+content-type: application/json
+
+{
+  "query" : { "match" : { "desc" : "管理" }}
+}
+
+# 控制返回条数
+GET {{es_server}}/junsircoding/table1/_search HTTP/1.1
+content-type: application/json
+
+{
+  "query" : { "match" : { "desc" : "管理" }},
+  "size": 5
+}
+
+# 指定位移，分页
+GET {{es_server}}/junsircoding/table1/_search HTTP/1.1
+content-type: application/json
+
+{
+  "query" : { "match" : { "desc" : "管理" }},
+  "from": 0,
+  "size": 10
+}
+
+# or 查询
+GET {{es_server}}/junsircoding/table1/_search HTTP/1.1
+content-type: application/json
+
+{
+  "query" : { "match" : { "desc" 
+}
+
+# and 查询
+# bool 有 must、filter、should、must_not
+GET {{es_server}}/junsircoding/table1/_search HTTP/1.1
+content-type: application/json
+
+{
+  "query": {
+    "bool": {
+      "must": [
+        { "match": { "desc": "管理" } },
+        { "match": { "desc": "数据库" } }
+      ]
+    }
+  }
+}
