@@ -1,6 +1,6 @@
-#### 基本
+# 基本
 
-##### 创建 Dataframe
+## 创建 Dataframe
 
 ```python
 import pandas as pd
@@ -35,7 +35,7 @@ df = pd.DataFrame(
 3    John, Mr. Peter Parker   24    male  3345       3    Japan
 ```
 
-##### 创建 Series
+## 创建 Series
 
 ```python
 ages = pd.Series([22, 35, 58], name="Age")
@@ -48,7 +48,7 @@ ages = pd.Series([22, 35, 58], name="Age")
 Name: Age, dtype: int64
 ```
 
-##### 选取一列
+## 选取一列
 
 ```python
 df["Age"]
@@ -62,21 +62,27 @@ df["Age"]
 Name: Age, dtype: int64
 ```
 
-##### 预览前几行
+## 选取多列
+
+```python
+df[["Name", "Age"]]
+```
+
+## 预览前几行
 
 ```python
 df.head() # 默认5行
 df.head(8) # 可指定行数
 ```
 
-##### 预览后几行
+## 预览后几行
 
 ```python
 df.tail() # 默认5行
 df.tail(8) # 可指定行数
 ```
 
-##### 查看每一列数据类型
+## 查看每一列数据类型
 
 ```python
 df.dtypes
@@ -92,7 +98,7 @@ Location    object
 dtype: object
 ```
 
-##### 查看行列数
+## 查看行列数
 
 ```python
 df.shape
@@ -102,7 +108,7 @@ df.shape
 (4, 6)
 ```
 
-##### 求最大值
+## 求最大值
 
 > 仅对数字类型数据有效
 
@@ -110,7 +116,7 @@ df.shape
 df["Age"].max()
 ```
 
-##### 罗列基本统计信息
+## 罗列基本统计信息
 
 ```python
 df.describe()
@@ -128,7 +134,7 @@ min    22.00000  1500.000000  2.00000
 max    58.00000  3345.000000  3.00000
 ```
 
-##### 罗列全部数据类型
+## 罗列全部数据类型
 
 ```python
 df.info()
@@ -150,9 +156,17 @@ dtypes: int64(3), object(3)
 memory usage: 320.0+ bytes
 ```
 
-#### 文件
+## 遍历数据集
 
-##### 读取文件
+```python
+for idx, sub_series in df.iterrows():
+    print(idx) # 行下标
+    print(sub_series) # 一行数据: numpy.Series
+```
+
+# 文件
+
+## 读取文件
 
 ```python
 df = pd.read_csv("path.csv")
@@ -161,7 +175,7 @@ df = pd.read_csv("path.csv", index_col=0, parse_dates=True)
 # parse_dates=True 将时间类型的列转义为时间戳类型
 ```
 
-##### 将数据导出为 Excel
+## 将数据导出为 Excel
 
 ```python
 df.to_excel(
@@ -171,9 +185,9 @@ df.to_excel(
 )
 ```
 
-#### 筛选
+# 筛选
 
-##### 大于某值
+## 大于某值
 
 ```python
 df[
@@ -186,7 +200,7 @@ df[
 2  Bonnell, Miss. Elizabeth   58  female  1550       3   Africa
 ```
 
-##### 指定枚举值列表
+## 指定枚举值列表
 
 ```python
 df[
@@ -202,7 +216,7 @@ df[
 1  Allen, Mr. William Henry   35  male  1600       2  America
 ```
 
-##### 多个条件并集
+## 多个条件并集
 
 ```python
 df[
@@ -219,7 +233,7 @@ df[
 3    John, Mr. Peter Parker   24    male  3345       3    Japan
 ```
 
-##### 筛选非空值
+## 筛选非空值
 
 ```python
 df[
@@ -227,13 +241,13 @@ df[
 ]
 ```
 
-##### 筛选后返回指定列
+## 筛选后返回指定列
 
 ```python
 adult_names = df.loc[df["Age"] > 35, "Name"]
 ```
 
-##### 指定行区间、列区间
+## 指定行区间、列区间
 
 ```python
 df.iloc[2:3, 1:4]
@@ -244,7 +258,7 @@ df.iloc[2:3, 1:4]
 2   58  female  1550
 ```
 
-##### 查看对限定条件的满足情况
+## 查看对限定条件的满足情况
 
 ```python
 0    False
@@ -254,15 +268,33 @@ df.iloc[2:3, 1:4]
 Name: Age, dtype: bool
 ```
 
-#### 更改
+## 指定列的值选取子数据集
 
-##### 更改数据
+```python
+df.loc[df["Name"]=="Tom"]
+```
+
+## 正则筛选数据
+
+```python
+match_result_series = series_data.str.contains(r".*TOM.*", regex=True).value_counts()
+"""
+计算出匹配了正则的个数, 包括匹配和不匹配的个数
+返回为 Series, 有两行, True 和 False
+如果没有匹配的项, True 没有, 要注意捕获 KeyError 的异常
+"""
+match_result_series[True] # 计算出匹配了正则的个数
+```
+
+# 更改
+
+## 更改数据
 
 ```python
 df["Age"] = "Mike"
 ```
 
-##### 创建新列
+## 创建新列
 
 ```python
 df["new_age"] = df["Age"] * 1.882
@@ -277,7 +309,7 @@ df["age_fare"] = (df["Age"] / df["Fare"])
 3    John, Mr. Peter Parker   24    male  3345       3    Japan   45.168  0.007175
 ```
 
-##### 重命名列名
+## 重命名列名
 
 ```python
 df_renamed = df.rename(
@@ -289,7 +321,7 @@ df_renamed = df.rename(
 )
 ```
 
-##### 将列名全转为小写
+## 将列名全转为小写
 
 ```python
 df_lower = df.rename(
@@ -297,34 +329,46 @@ df_lower = df.rename(
 )
 ```
 
-#### 数据分析
+## 在末尾新增一行
 
-##### 求平均值
+```python
+df.loc[df.index] = ["Tom", 20, "male", 1800, 3, "Japan"]
+```
+
+## 行去重
+
+```python
+df.drop_duplicates(inplace=True) # inplace 为 True 会把原数据集修改
+```
+
+# 数据分析
+
+## 求平均值
 
 ```python
 df["Age"].mean()
 ```
 
-##### 求中位数
+## 求中位数
 
 ```python
 df["Age"].median()
 ```
 
-##### 求最值
+## 求最值
 
 ```python
 df["Age"].max()
 df["Age"].min()
 ```
 
-##### 求偏度
+## 求偏度
 
 ```python
 df["Age"].skew()
 ```
 
-##### 一次性计算多列
+## 一次性计算多列
 
 ```python
 df[
@@ -332,7 +376,7 @@ df[
 ].median()
 ```
 
-##### 一次性计算多列的多种统计类型
+## 一次性计算多列的多种统计类型
 
 ```python
 df.agg(
@@ -352,7 +396,7 @@ skew     1.368208      NaN
 mean          NaN  1998.75
 ```
 
-##### 对全部数据分组
+## 对全部数据分组
 
 ```python
 df.groupby("Age").mean()
@@ -367,7 +411,7 @@ Age
 58   1550.0     3.0
 ```
 
-##### 对指定几列分组
+## 对指定几列分组
 
 ```python
 df[
@@ -384,7 +428,7 @@ Age
 58   1550.0
 ```
 
-##### 分组后再筛选
+## 分组后再筛选
 
 ```python
 df.groupby("Sex")["Age"].mean()
@@ -411,7 +455,7 @@ male    2         1550.0
 Name: Fare, dtype: float64
 ```
 
-##### 枚举值计数
+## 枚举值计数
 
 ```python
 # 常规方法
@@ -427,9 +471,9 @@ Pclass
 Name: Pclass, dtype: int64
 ```
 
-#### 排序
+# 排序
 
-##### 指定某列排序
+## 指定某列排序
 
 **默认升序**
 
@@ -464,7 +508,7 @@ df.sort_values(
 0   Braund, Mr. Owen Harris   22    male  1500       2    China
 ```
 
-##### 按照行标签排序
+## 按照行标签排序
 
 ```python
 df.sort_index().head()
@@ -478,9 +522,9 @@ df.sort_index().head()
 3    John, Mr. Peter Parker   24    male  3345       3    Japan
 ```
 
-#### 调整表格结构
+# 调整表格结构
 
-##### 宽表变窄表
+## 宽表变窄表
 
 > 宽表就是把字段全都堆在一个表中，没有用多对多活其他更符合数据库三范式的方式加以设计。感官上看字段非常多，数据非常冗余，但是理解起来简单，一看就懂。宽表的存在是为了用空间换时间。
 >
@@ -576,7 +620,7 @@ iPhone 13 Pro         7999.0       6754    6569     8399  7430.250
 All                   7843.5       6671    6684     6949  7036.875
 ```
 
-##### 重置索引
+## 重置索引
 
 对于这个 `DataFrame`，当前的索引列是 `phone` 的数据。
 
@@ -619,7 +663,7 @@ store  jingdong  pinduoduo  taobao  tianmao
 1          7999       6754    6569     8399
 ```
 
-##### 联结 `datafame`
+## 联结 `datafame`
 
 有这样两个结构相似的 `dataframe`：
 
@@ -694,7 +738,7 @@ pd.concat(
 1    John, Mr. Peter Parker   24    male  3345       3    Japan
 ```
 
-##### 合并 `dataframe`
+## 合并 `dataframe`
 
 对于以下两个 `dataframe`：
 

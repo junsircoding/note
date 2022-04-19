@@ -7,8 +7,11 @@ import openpyxl
 # TODO: 创建新表格
 # 生成一个新的工作簿
 new_work_book = openpyxl.Workbook()
-# 生成一个激活的表格
+# 得到当前激活的表格
 new_sheet = new_work_book.active
+# 创建一个新表格
+new_work_book.create_sheet("new_sheet_1")
+new_sheet_1 = new_work_book["new_sheet_1"]
 # 给新表格命名
 new_sheet.title = "Sheet1"
 # 直接根据行列坐标赋值
@@ -48,3 +51,11 @@ for row in sheet.rows:
         cell_value = cell.value  # 单元格数据
         row_col_nums.append(f"[{col_num}-{row_num}]:{cell_value}")
     print(row_col_nums)
+# 获取某一单元格数据
+print(sheet['A1'].value)
+print(sheet.cell(2, 2).value)
+# 修改数据
+sheet.cell(2, 3, '0')
+sheet["B2"] = "Peking"
+# 保存修改
+work_book.save(filename='DataSource\\myfile.xlsx')

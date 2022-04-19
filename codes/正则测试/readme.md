@@ -242,3 +242,18 @@ func main() {
 
 - [Regex tutorial — A quick cheatsheet by examples](https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285)
 - [正则表达式 - 教程](https://www.runoob.com/regexp/regexp-tutorial.html)
+
+
+# 一些案例
+
+- 不含某值
+
+    ```shell
+	/((?!(第一个词|第二个词)).)*/gm
+	```
+
+- 正则匹配特殊符号
+
+    ```python
+    re.search(r"\W", "$%^")
+	```
