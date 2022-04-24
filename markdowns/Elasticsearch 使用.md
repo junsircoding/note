@@ -1,21 +1,9 @@
 Elasticsearch 练习笔记
 
-Miniconda 安装包链接：
-```http
-https://repo.anaconda.com/miniconda/Miniconda2-latest-Linux-x86_64.sh
-```
-Jdk 安装包链接：
-```http
-https://mirrors.huaweicloud.com/java/jdk/8u191-b12/
-```
-Elasticsearch 安装包链接：
-```http
-https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.5.1.zip
-```
-阮一峰教程：
-```http
-https://www.ruanyifeng.com/blog/2017/08/elasticsearch.html
-```
+[Miniconda 安装包](https://repo.anaconda.com/miniconda/Miniconda2-latest-Linux-x86_64.sh)
+[Jdk 安装包](https://mirrors.huaweicloud.com/java/jdk/8u191-b12/)
+[Elasticsearch 安装包](https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.5.1.zip)
+[阮一峰教程](https://www.ruanyifeng.com/blog/2017/08/elasticsearch.html)
 
 ES 数据结构图
 ![](https://p.qlogo.cn/qqmail_head/rwzOcu9uLseNKBm3MFXahbicUMCaTibSiaBsmeWYDLEqTjvDqFZ3HATr8vjN7qgfa29pMycSzgPqYY/0)
@@ -244,3 +232,14 @@ curl 'localhost:9200/accounts/person/_search'  -d '
   }
 }'
 ```   
+
+----
+
+接口调用 Kibana 客户端
+
+http://ip/api/console/proxy?path=index_name%2F_search&method=POST
+
+headers = {
+    "Authorization": "Basic a2liYW5hOnByZEAyMDIxMDQ5",
+    "kbn-version": "6.5.0"
+}
