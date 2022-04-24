@@ -239,7 +239,9 @@ curl 'localhost:9200/accounts/person/_search'  -d '
 
 http://ip/api/console/proxy?path=index_name%2F_search&method=POST
 
+```python
 headers = {
     "Authorization": "Basic a2liYW5hOnByZEAyMDIxMDQ5",
     "kbn-version": "6.5.0"
 }
+```
