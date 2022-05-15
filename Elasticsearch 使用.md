@@ -245,3 +245,44 @@ headers = {
     "kbn-version": "6.5.0"
 }
 ```
+
+----
+
+Elasticsearch 分组查询
+
+```
+GET /order/_search?size=0
+{
+  "aggs": {
+    "shop": { // 聚合查询的名字，随便取个名字
+      "terms": { // 聚合类型为: terms
+        "field": "shop_id" // 根据shop_id字段值，分桶
+      }
+    }
+  }
+}
+```
+返回结果
+```
+{
+    ...
+    "aggregations" : {
+        "shop" : { // 聚合查询名字
+            "buckets" : [ // 桶聚合结果，下面返回各个桶的聚合结果
+                {
+                    "key" : "1", // key分桶的标识，在terms聚合中，代表的就是分桶的字段值
+                    "doc_count" : 6 // 默认的指标聚合是统计桶内文档总数
+                },
+                {
+                    "key" : "5",
+                    "doc_count" : 3
+                },
+                {
+                    "key" : "9",
+                    "doc_count" : 2
+                }
+            ]
+        }
+    }
+}
+```
