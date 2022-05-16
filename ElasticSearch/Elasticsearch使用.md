@@ -1,5 +1,18 @@
 Elasticsearch 练习笔记
 
+使用 brew 安装 Elasticsearch 和 Kibana
+
+```shell
+brew install elastic/tap/elasticsearch-full
+brew install elastic/tap/kibana-full
+```
+
+| 数据库 | ES | 英文 |
+| --- | --- | --- |
+| 数据库 | 索引 | Index |
+| 数据表 | 分组 | Type |
+| 数据 | 文档 | Document |
+
 [Miniconda 安装包](https://repo.anaconda.com/miniconda/Miniconda2-latest-Linux-x86_64.sh)
 [Jdk 安装包](https://mirrors.huaweicloud.com/java/jdk/8u191-b12/)
 [Elasticsearch 安装包](https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.5.1.zip)
@@ -282,6 +295,141 @@ GET /order/_search?size=0
                     "doc_count" : 2
                 }
             ]
+        }
+    }
+}
+```
+
+----
+
+ES筛选数字区间
+
+1. ES正则筛选
+
+正则表达式匹配。通过正则表达式来寻找匹配的字段，lucene 会在搜索的时候生成有限状态机，其中包含很多的状态，默认的最多状态数量是10000
+
+```json
+GET /_search
+{
+  "query": {
+    "regexp": {
+      "acceptAge": "^((1[4-9])|([2-9]\d)|([1-9]\d{2,}))-(([1-5]\d)|(\d{1}))$"
+    }
+  }
+}
+```
+大于13小于60的数，13-60
+
+2. 正则匹配大于13的数
+
+re_str = r"^((1[4-9])|([2-9]\d)|([1-9]\d{2,}))$"
+
+3. 如果要判断一个数大于等于10
+
+re_str = r"^((1[1-9])|([2-9]\d)|([1-9]\d{2,}))$"
+
+----
+
+ES **或**查询条件
+
+```json
+{
+    "query": {
+        "bool": {
+            "must": [
+                {
+                    "term": {
+                        "shape": "round"
+                    }
+                },
+                {
+                    "bool": {
+                        "should": [
+                            {
+                                "term": {"color": "red"}
+                            },
+                            {
+                                "term": {"color": "blue"}
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    }
+}
+```
+
+----
+
+ElasticSearch 中的布尔查询
+或, should; 且, must; 非, not
+基本查询
+
+```json
+{
+    "query": {
+        "bool": {
+            "must": [
+                {
+                    "term": {"字段键": "字段值"}
+                },
+                {
+                    "bool": {
+                        "should": [
+                            {
+                                "term": {"字段键": "字段值"}
+                            },
+                            {
+                                "term": {"字段键": "字段值"}
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    }
+}
+```
+
+校验字段非空
+
+```json
+{
+    "query": {
+        "bool":{
+            "must": {
+                "exists": {"field": "字段键"}
+            }
+        }
+    }
+}
+
+```
+
+筛选区间
+
+```json
+{
+    "query": {
+        "range": {
+            "字段键": {
+                "gte": 10, # ≥
+                "lte": 20, # ≤
+                "boost": 2.0 # 相关性分数, 默认 1.0
+            }
+        }
+    }
+}
+```
+
+匹配正则
+
+```json
+{
+    "query": {
+        "regexp": {
+            "字段键": "^.*\d$"
         }
     }
 }
