@@ -257,11 +257,3 @@ func main() {
     ```python
     re.search(r"\W", "$%^")
 	```
-
-- 正则提取特定字符之间的内容
-
-  ```python
-  import re
-  text = "abcxmikexcba"
-  re.findall(r".*x(.*)x.*", text)
-  ```
