@@ -24,3 +24,9 @@ conda env list
 ```shell
 conda env create -n ${env_name} -f ./environment.yaml
 ```
+
+conda 克隆环境
+
+```shell
+conda create -n aaa --clone bbb
+```
