@@ -46,3 +46,5 @@ for qty, id, desc in records:
 document.add_page_break()
 
 document.save('demo.docx')
+
+# 解析出一个段落的格式, 包括字体, 字号, 段落, 字体颜色
