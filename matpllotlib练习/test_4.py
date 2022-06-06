@@ -1,0 +1,17 @@
+"""折线图"""
+import numpy as np
+import matplotlib.pyplot as plt
+# 0.准备数据
+x = np.linspace(-10, 10, 1000)
+y = np.sin(x)
+
+# 1.创建画布
+plt.figure(figsize=(20, 8), dpi=100)
+
+# 2.绘制函数图像
+plt.plot(x, y)
+# 2.1 添加网格显示
+plt.grid()
+
+# 3.显示图像
+plt.show()
