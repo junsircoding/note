@@ -162,7 +162,7 @@ class PGClient(object):
     def insert(self, sql: str, params=None):
         """
         插入单行数据
-        
+
         SQL 示例
 
         ```python
