@@ -4,7 +4,7 @@
 # @Author      : junsircoding
 # @File        : Scripts/32-flask_rece_post.py
 # @Info        : 
-# @Last Edited : 2022-06-07 11:16:41
+# @Last Edited : 2022-06-07 11:19:15
 
 from flask import Flask
 from flask import request

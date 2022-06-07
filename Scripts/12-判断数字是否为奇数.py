@@ -4,7 +4,7 @@
 # @Author      : junsircoding
 # @File        : Scripts/12-判断数字是否为奇数.py
 # @Info        : 
-# @Last Edited : 2022-06-07 11:16:41
+# @Last Edited : 2022-06-07 11:19:15
 
 """
 ◇filter(func, iter)

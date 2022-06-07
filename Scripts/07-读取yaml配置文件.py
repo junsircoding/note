@@ -2,9 +2,9 @@
 # -*- coding: utf-8 -*-
 # @Date        : 2022-06-07 10:52:51
 # @Author      : junsircoding
-# @File        : Scripts/7-读取yaml配置文件.py
+# @File        : Scripts/07-读取yaml配置文件.py
 # @Info        : 
-# @Last Edited : 2022-06-07 11:16:41
+# @Last Edited : 2022-06-07 11:19:15
 
 """
 读取 yaml 配置文件

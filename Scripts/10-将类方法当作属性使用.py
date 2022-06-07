@@ -4,7 +4,7 @@
 # @Author      : junsircoding
 # @File        : Scripts/10-将类方法当作属性使用.py
 # @Info        : 
-# @Last Edited : 2022-06-07 11:16:41
+# @Last Edited : 2022-06-07 11:19:15
 
 class Student(object):
     def __init__(self, name, score):

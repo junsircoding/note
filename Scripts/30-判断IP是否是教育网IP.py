@@ -4,7 +4,7 @@
 # @Author      : junsircoding
 # @File        : Scripts/30-判断IP是否是教育网IP.py
 # @Info        : 
-# @Last Edited : 2022-06-07 11:16:41
+# @Last Edited : 2022-06-07 11:19:15
 
 """
 判断 IP 是否是 教育网 IP

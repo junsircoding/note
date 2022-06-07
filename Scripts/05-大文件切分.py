@@ -2,9 +2,9 @@
 # -*- coding: utf-8 -*-
 # @Date        : 2022-06-07 10:52:51
 # @Author      : junsircoding
-# @File        : Scripts/5-大文件切分.py
+# @File        : Scripts/05-大文件切分.py
 # @Info        : 
-# @Last Edited : 2022-06-07 11:16:41
+# @Last Edited : 2022-06-07 11:19:15
 
 """
 大型文本文件分割, 文件逐行读取, 文件逐行追加写入
