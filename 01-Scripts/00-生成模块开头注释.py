@@ -4,7 +4,7 @@
 # @Author      : junsircoding
 # @File        : 01-Scripts/00-生成模块开头注释.py
 # @Info        : 
-# @Last Edited : 2022-06-07 15:53:55
+# @Last Edited : 2022-06-07 16:57:45
 
 import os
 import re
@@ -35,6 +35,7 @@ pattern_list = [
 
 current_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())
 create_time = current_time
+file_info = ""
 
 # 记录每个文件内容, 去除前七行的注释内容
 for file_abs_path in py_file_list:
@@ -52,6 +53,9 @@ for file_abs_path in py_file_list:
                     # 记录创建时间
                     if p_idx == 2:
                         create_time = _line.replace("# @Date        : ", "").strip()
+                    # 记录文件描述
+                    if p_idx == 5:
+                        file_info = _line.replace("# @Info        :", "").strip()
                     is_docstring = True
             if is_docstring:
                 continue
