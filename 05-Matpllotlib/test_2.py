@@ -2,9 +2,9 @@
 # -*- coding: utf-8 -*-
 # @Date        : 2022-06-07 10:52:51
 # @Author      : junsircoding
-# @File        : Matpllotlib/test_2.py
+# @File        : 05-Matpllotlib/test_2.py
 # @Info        : 
-# @Last Edited : 2022-06-07 10:59:16
+# @Last Edited : 2022-06-07 17:46:48
 
 """matplotlib 画出温度变化图"""
 import matplotlib.pyplot as plt

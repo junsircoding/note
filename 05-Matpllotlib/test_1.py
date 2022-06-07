@@ -2,9 +2,9 @@
 # -*- coding: utf-8 -*-
 # @Date        : 2022-06-07 10:52:51
 # @Author      : junsircoding
-# @File        : Matpllotlib/test_1.py
+# @File        : 05-Matpllotlib/test_1.py
 # @Info        : 
-# @Last Edited : 2022-06-07 10:59:16
+# @Last Edited : 2022-06-07 17:46:48
 
 """matplotlib 是专门用于开发2D/3D图表的包"""
 

@@ -4,7 +4,7 @@
 # @Author      : junsircoding
 # @File        : 01-Scripts/00-生成模块开头注释.py
 # @Info        : 
-# @Last Edited : 2022-06-07 16:57:45
+# @Last Edited : 2022-06-07 17:46:48
 
 import os
 import re
@@ -13,7 +13,7 @@ import time
 # 获取所有 py 文件路径
 pwd = os.path.dirname(os.path.abspath(__file__))
 path_list = pwd.split(os.sep)
-path = os.sep.join(path_list)
+path = os.sep.join(path_list[:-1])
 
 py_file_list = []
 for root, dirs, files in os.walk(path):

@@ -2,9 +2,9 @@
 # -*- coding: utf-8 -*-
 # @Date        : 2022-06-07 10:52:51
 # @Author      : junsircoding
-# @File        : 短笔记/精通Python设计模式配套源码/chapter3/clone.py
+# @File        : 02-Markdown/精通Python设计模式配套源码/chapter3/clone.py
 # @Info        : 
-# @Last Edited : 2022-06-07 10:59:16
+# @Last Edited : 2022-06-07 17:46:48
 
 import copy
 

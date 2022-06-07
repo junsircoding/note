@@ -2,9 +2,9 @@
 # -*- coding: utf-8 -*-
 # @Date        : 2022-06-07 10:52:51
 # @Author      : junsircoding
-# @File        : Tensorflow/tensorflow练习/教程1/1-prac.py
+# @File        : 08-Tensorflow/tensorflow练习/教程1/1-prac.py
 # @Info        : 
-# @Last Edited : 2022-06-07 10:59:16
+# @Last Edited : 2022-06-07 17:46:48
 
 """
 tensorflow 练习

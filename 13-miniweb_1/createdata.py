@@ -2,9 +2,9 @@
 # -*- coding: utf-8 -*-
 # @Date        : 2022-06-07 10:52:51
 # @Author      : junsircoding
-# @File        : MiniWeb/createdata.py
+# @File        : 13-miniweb_1/createdata.py
 # @Info        : 
-# @Last Edited : 2022-06-07 10:59:16
+# @Last Edited : 2022-06-07 17:46:48
 
 # 创建MiniWeb项目第一步：创建数据库
 # 用pymysql方式导入数据

@@ -4,7 +4,7 @@
 # @Author      : junsircoding
 # @File        : 01-Scripts/06-打印Windows系统网络信息.py
 # @Info        : 
-# @Last Edited : 2022-06-07 16:57:45
+# @Last Edited : 2022-06-07 17:46:48
 
 import winreg
 
