@@ -1,3 +1,11 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Date        : 2022-06-07 10:52:51
+# @Author      : junsircoding
+# @File        : 单例练习.py
+# @Info        : 
+# @Last Edited : 2022-06-07 10:59:16
+
 """
 单例模式的数据存储
 当需要缓存的数据实时加载需要一定的时间, 但是不会频繁地更新, 就可以用这种方法. 

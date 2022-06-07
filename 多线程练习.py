@@ -1,3 +1,11 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Date        : 2022-06-07 10:52:51
+# @Author      : junsircoding
+# @File        : 多线程练习.py
+# @Info        : 
+# @Last Edited : 2022-06-07 10:59:16
+
 import time, threading
 
 # 假定这是你的银行存款:

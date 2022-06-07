@@ -1,3 +1,11 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Date        : 2022-06-07 10:52:51
+# @Author      : junsircoding
+# @File        : 读取yaml配置文件.py
+# @Info        : 
+# @Last Edited : 2022-06-07 10:59:16
+
 """
 读取 yaml 配置文件
 pip install pyyaml

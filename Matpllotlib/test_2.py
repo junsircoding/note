@@ -1,3 +1,11 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Date        : 2022-06-07 10:52:51
+# @Author      : junsircoding
+# @File        : Matpllotlib/test_2.py
+# @Info        : 
+# @Last Edited : 2022-06-07 10:59:16
+
 """matplotlib 画出温度变化图"""
 import matplotlib.pyplot as plt
 import random

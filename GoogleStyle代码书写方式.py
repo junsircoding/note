@@ -1,4 +1,11 @@
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
+# @Date        : 2022-06-07 10:52:51
+# @Author      : junsircoding
+# @File        : GoogleStyle代码书写方式.py
+# @Info        : 
+# @Last Edited : 2022-06-07 10:59:16
+
 """Google 样式的 docstring 示例.
 
 所谓 docstring, 对于 Python 而言, 是指在代码文件开头的三引号之间的内容. 

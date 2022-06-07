@@ -1,3 +1,11 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Date        : 2022-06-07 10:52:51
+# @Author      : junsircoding
+# @File        : 短笔记/精通Python设计模式配套源码/chapter8/mvc.py
+# @Info        : 
+# @Last Edited : 2022-06-07 10:59:16
+
 quotes = ('A man is not complete until he is married. Then he is finished.',
           'As I said before, I never repeat myself.',
           'Behind a successful man is an exhausted woman.',

@@ -1,3 +1,11 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Date        : 2022-06-07 10:52:51
+# @Author      : junsircoding
+# @File        : MiniWeb/createdata.py
+# @Info        : 
+# @Last Edited : 2022-06-07 10:59:16
+
 # 创建MiniWeb项目第一步：创建数据库
 # 用pymysql方式导入数据
 # 导入pymysql包

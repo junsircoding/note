@@ -1,4 +1,10 @@
-# coding: utf-8
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Date        : 2022-06-07 10:52:51
+# @Author      : junsircoding
+# @File        : 短笔记/精通Python设计模式配套源码/chapter15/strategy.py
+# @Info        : 
+# @Last Edited : 2022-06-07 10:59:16
 
 import time
 SLOW = 3  # 单位为秒

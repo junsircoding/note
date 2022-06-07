@@ -1,3 +1,11 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Date        : 2022-06-07 10:52:51
+# @Author      : junsircoding
+# @File        : MiniWeb/startServer.py
+# @Info        : 
+# @Last Edited : 2022-06-07 10:59:16
+
 # 用多线程的方式创建TCP服务器
 # 目标：运行代码，服务器开启，在浏览器输入localhost:8341进入主页
 # 导包

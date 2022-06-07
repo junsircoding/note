@@ -1,3 +1,11 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Date        : 2022-06-07 10:52:51
+# @Author      : junsircoding
+# @File        : 将中文转换成阿拉伯数字.py
+# @Info        : 
+# @Last Edited : 2022-06-07 10:59:16
+
 """
 将中文转换成阿拉伯数字,整数部分 如七百二十四-> 724
 """

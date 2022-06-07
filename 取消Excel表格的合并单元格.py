@@ -1,3 +1,11 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Date        : 2022-06-07 10:52:51
+# @Author      : junsircoding
+# @File        : 取消Excel表格的合并单元格.py
+# @Info        : 
+# @Last Edited : 2022-06-07 10:59:16
+
 """
 `openpyxl` 取消 `Excel` 表格的**合并单元格**，并自动填充数据
 """

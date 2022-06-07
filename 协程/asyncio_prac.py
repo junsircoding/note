@@ -1,4 +1,11 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Date        : 2022-06-07 10:52:51
+# @Author      : junsircoding
+# @File        : 协程/asyncio_prac.py
+# @Info        : 
+# @Last Edited : 2022-06-07 10:59:16
+
 # import asyncio
 
 # async def count():
@@ -33,7 +40,6 @@
 #     elapsed = time.perf_counter() - s
 #     print(f"{__file__} executed in {elapsed:0.2f} seconds.")
 
-#!/usr/bin/env python3
 # rand.py
 
 # import asyncio
@@ -170,7 +176,6 @@
 #     end = time.perf_counter() - start
 #     print(f"程序耗时 {end:0.2f} 秒.")
 
-#!/usr/bin/env python3
 
 import asyncio
 import itertools as it

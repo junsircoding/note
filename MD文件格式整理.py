@@ -1,3 +1,11 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Date        : 2022-06-07 10:52:51
+# @Author      : junsircoding
+# @File        : MD文件格式整理.py
+# @Info        : 
+# @Last Edited : 2022-06-07 10:59:16
+
 """
 将格式混乱的 md 文件整理, 英文数字前后空一格
 """
@@ -61,7 +69,3 @@ for idx, item in enumerate(str_list):
 # 输出新文件
 with open(new_file, "w", encoding="utf-8") as f2:
     f2.write("".join(new_str_list))
-
-        
-    
-    

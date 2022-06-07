@@ -1,3 +1,11 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Date        : 2022-06-07 10:52:51
+# @Author      : junsircoding
+# @File        : 大文件切分.py
+# @Info        : 
+# @Last Edited : 2022-06-07 10:59:16
+
 """
 大型文本文件分割, 文件逐行读取, 文件逐行追加写入
 1. 从练习目录中获取 zhwiki-20210720-pages-json 文件

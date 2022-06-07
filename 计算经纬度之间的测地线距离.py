@@ -1,3 +1,11 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Date        : 2022-06-07 10:52:51
+# @Author      : junsircoding
+# @File        : 计算经纬度之间的测地线距离.py
+# @Info        : 
+# @Last Edited : 2022-06-07 10:59:16
+
 """
 计算经纬度之间的测地线距离
 纬度 latitude, 经度 longitude

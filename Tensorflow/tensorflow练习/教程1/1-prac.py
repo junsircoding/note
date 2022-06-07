@@ -1,4 +1,11 @@
-# -*- coding=utf-8 -*-
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Date        : 2022-06-07 10:52:51
+# @Author      : junsircoding
+# @File        : Tensorflow/tensorflow练习/教程1/1-prac.py
+# @Info        : 
+# @Last Edited : 2022-06-07 10:59:16
+
 """
 tensorflow 练习
 API: https://www.tensorflow.org/api_docs/python/tf

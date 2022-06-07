@@ -1,3 +1,11 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Date        : 2022-06-07 10:52:51
+# @Author      : junsircoding
+# @File        : 自定义Flask日志格式.py
+# @Info        : 
+# @Last Edited : 2022-06-07 10:59:16
+
 """
 自定义 Flask 日志格式
 """

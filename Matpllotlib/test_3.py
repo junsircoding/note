@@ -1,3 +1,11 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Date        : 2022-06-07 10:52:51
+# @Author      : junsircoding
+# @File        : Matpllotlib/test_3.py
+# @Info        : 
+# @Last Edited : 2022-06-07 10:59:16
+
 """多个坐标系"""
 import matplotlib.pyplot as plt
 import random

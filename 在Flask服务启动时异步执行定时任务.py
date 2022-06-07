@@ -1,3 +1,11 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Date        : 2022-06-07 10:52:51
+# @Author      : junsircoding
+# @File        : 在Flask服务启动时异步执行定时任务.py
+# @Info        : 
+# @Last Edited : 2022-06-07 10:59:16
+
 """
 在 flask 服务启动时异步执行定时任务
 """

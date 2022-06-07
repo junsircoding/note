@@ -1,4 +1,11 @@
-# -*- coding=utf-8 -*-
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Date        : 2022-06-07 10:52:51
+# @Author      : junsircoding
+# @File        : Tensorflow/tensorflow练习/教程1/2.prac.py
+# @Info        : 
+# @Last Edited : 2022-06-07 10:59:16
+
 """
 TensorFlow 程序的快速概述
 训练一个神经网络模型, 对运动鞋和衬衫等服装图像进行分类.
@@ -156,4 +163,3 @@ print(predictions[0])
 预测结果是一个包含 10 个数字的数组。它们代表模型对 10 种不同服装中每种服装的“置信度”。您可以看到哪个标签的置信度值最大：
 """
 print(np.argmax(predictions[0]))
-

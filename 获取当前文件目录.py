@@ -1,3 +1,11 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Date        : 2022-06-07 10:52:51
+# @Author      : junsircoding
+# @File        : 获取当前文件目录.py
+# @Info        : 
+# @Last Edited : 2022-06-07 10:59:16
+
 import os
 import sys
 """

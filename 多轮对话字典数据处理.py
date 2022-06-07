@@ -1,3 +1,11 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Date        : 2022-06-07 10:52:51
+# @Author      : junsircoding
+# @File        : 多轮对话字典数据处理.py
+# @Info        : 
+# @Last Edited : 2022-06-07 10:59:16
+
 """
 字典数据处理
 """

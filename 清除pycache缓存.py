@@ -1,3 +1,11 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Date        : 2022-06-07 10:52:51
+# @Author      : junsircoding
+# @File        : 清除pycache缓存.py
+# @Info        : 
+# @Last Edited : 2022-06-07 10:59:16
+
 """清除 __pycache__ 缓存"""
 import os
 import shutil

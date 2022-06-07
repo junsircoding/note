@@ -1,3 +1,11 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Date        : 2022-06-07 10:52:51
+# @Author      : junsircoding
+# @File        : 集合数据生成韦恩图.py
+# @Info        : 
+# @Last Edited : 2022-06-07 10:59:16
+
 """
 集合类数据生成韦恩图
 """

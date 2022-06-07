@@ -1,3 +1,11 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Date        : 2022-06-07 10:52:51
+# @Author      : junsircoding
+# @File        : 使用正则批量从语料中提取年龄字段.py
+# @Info        : 
+# @Last Edited : 2022-06-07 10:59:16
+
 """
 使用正则批量从语料中提取年龄字段
 """

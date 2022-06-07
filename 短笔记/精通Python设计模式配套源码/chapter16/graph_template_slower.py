@@ -1,4 +1,10 @@
-# coding: utf-8
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Date        : 2022-06-07 10:52:51
+# @Author      : junsircoding
+# @File        : 短笔记/精通Python设计模式配套源码/chapter16/graph_template_slower.py
+# @Info        : 
+# @Last Edited : 2022-06-07 10:59:16
 
 BFS = 1
 DFS = 2

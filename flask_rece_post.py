@@ -1,3 +1,11 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Date        : 2022-06-07 10:52:51
+# @Author      : junsircoding
+# @File        : flask_rece_post.py
+# @Info        : 
+# @Last Edited : 2022-06-07 10:59:16
+
 from flask import Flask
 from flask import request
 from flask import jsonify
