@@ -1,0 +1,5 @@
+# 生成图像：graph-easy demo.txt
+
+graph { flow: south; }
+
+[ search_intent_recall ] -> [ age_recall ] -> [ age str in query ]
