@@ -3,11 +3,12 @@
 # @Date        : 2022-06-07 10:52:51
 # @Author      : junsircoding
 # @File        : 08-Tensorflow/3-tf实现线性回归.py
-# @Info        : 
+# @Info        : tf 实现线性回归
 # @Last Edited : 2022-06-07 17:46:48
 
 """
 Shift + Command + P: python:launch tensorboard
+tensorboard --logdir="./summary" --host 127.0.0.1 --port 8089
 """
 
 import os
