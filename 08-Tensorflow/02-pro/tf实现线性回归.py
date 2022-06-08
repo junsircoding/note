@@ -1,96 +1,113 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # @Date        : 2022-06-07 10:52:51
-# @Author      : junsircoding
-# @File        : 08-Tensorflow/3-tf实现线性回归.py
-# @Info        : tf 实现线性回归
-# @Last Edited : 2022-06-07 17:46:48
+# @Author      : junsircoding@gmail.com
+# @File        : 08-Tensorflow/02-pro/tf实现线性回归.py
+# @Info        : 
+# @Last Edited : 2022-06-08 18:04:57
 
 """
 Shift + Command + P: python:launch tensorboard
 tensorboard --logdir="./summary" --host 127.0.0.1 --port 8089
 """
 
+import tensorflow._api.v2.compat.v1 as tf
 import os
-import tensorflow
-
+# 关闭 tf 的警告日志
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+tf.logging.set_verbosity(tf.logging.ERROR)
 # 使用 tensorflow 1.x
-tf = tensorflow.compat.v1
+"""
+官方更推荐 `import tensorflow.compat.v1 as tf` 来导入 1.x 版本的 tf
+但是编辑器无法提示代码, 体验不好
+阅读源码后, 发现其实质是从 _api 导入
+"""
+
 # 关闭 eager execution
 tf.disable_eager_execution()
-tf.app.flags.DEFINE_string("model_path", "./linear_regression/", "模型保存的路径和文件名")
-FLAGS = tf.app.flags.FLAGS
+
+MODEL_PATH = "./linear_regression/"
 
 
 def linear_regression():
-    # 1. 准备好数据集：y = 0.8x + 0.7 100 个样本
-    # 特征值 X, 目标值 y_true
+    """
+    准备源输入数据和他们套公式之后的正确答案
+    源输入数据是 x
+    导公式之后的正确答案是 y_true
+    他们都是 100x1 的一维矩阵
+    """
     with tf.variable_scope("original_data"):
-        X = tf.random_normal(shape=(100, 1), mean=2, stddev=2)
-        # y_true [100, 1]
-        # 矩阵运算 X（100， 1）* （1, 1）= y_true(100, 1)
-        y_true = tf.matmul(X, [[0.8]]) + 0.7
+        x = tf.random_normal(shape=(100, 1), mean=2, stddev=2)
+        y_true = tf.matmul(x, [[0.8]]) + 0.7
 
-    # 2. 建立线性模型：
-    # y = W·X + b，目标：求出权重 W 和偏置 b
-
-    # 3. 随机初始化 W1 和 b1
+    """
+    建立线性模型：
+    y = weights * x + bias
+    目标: 求出权重 weights 和偏置 bias
+    随机初始化 weights 和 bias
+    """
     with tf.variable_scope("linear_model"):
         weights = tf.Variable(initial_value=tf.random_normal(shape=(1, 1)))
         bias = tf.Variable(initial_value=tf.random_normal(shape=(1, 1)))
-        y_predict = tf.matmul(X, weights) + bias
+        y_predict = tf.matmul(x, weights) + bias
 
-    # 4. 确定损失函数（预测值与真实值之间的误差）-均方误差
+    """
+    确定损失函数(预测值与真实值之间的误差)-均方误差
+    """
     with tf.variable_scope("loss"):
-        error = tf.reduce_mean(tf.square(y_predict - y_true))
+        loss = tf.reduce_mean(tf.square(y_predict - y_true))
 
-    # 5. 梯度下降优化损失：需要指定学习率（超参数）
-    # W2 = W1 - 学习率*(方向)
-    # b2 = b1 - 学习率*(方向)
+    """
+    梯度下降优化损失：需要指定学习率(超参数)
+    weights_2 = weights_1 - 学习率*(方向)
+    bias_2 = bias_1 - 学习率*(方向)
+    """
     with tf.variable_scope("gd_optimizer"):
         optimizer = tf.train.GradientDescentOptimizer(
-            learning_rate=0.01).minimize(error)
+            learning_rate=0.01).minimize(loss)
 
-    # 2）收集变量
-    tf.summary.scalar("error", error)
+    # 收集变量
+    tf.summary.scalar("loss", loss)
     tf.summary.histogram("weights", weights)
     tf.summary.histogram("bias", bias)
-
-    # 3）合并变量
+    # 合并变量
     merge = tf.summary.merge_all()
-
     # 初始化变量
     init = tf.global_variables_initializer()
     # 创建saver对象
     saver = tf.train.Saver()
+
     # 开启会话进行训练
     with tf.Session() as sess:
-        # 运行初始化变量 OP
+        # 初始化变量
         sess.run(init)
         print("随机初始化的权重为[%f], 偏置为[%f]" % (weights.eval(), bias.eval()))
-        # 当存在checkpoint文件，就加载模型
-        if os.path.exists("./linear_regression/checkpoint"):
-            saver.restore(sess, FLAGS.model_path)
-        # 1）创建事件文件
+        # 当存在 checkpoint 文件，就加载模型
+        if os.path.exists(f"./{MODEL_PATH}/checkpoint"):
+            saver.restore(sess, MODEL_PATH)
+        # 创建概括文件, 供 tensorboard 使用
         file_writer = tf.summary.FileWriter(
             logdir="./summary", graph=sess.graph)
         # 训练模型
-        for i in range(100):
+        for epoch in range(100):
             sess.run(optimizer)
             print(
-                f"第[{i:2}]步的误差为[{error.eval()}], 权重为{weights.eval()}, 偏置为{bias.eval()}")
-            # 4）运行合并变量 op
+                "\r" +
+                f"第[{epoch:2}]步的误差为[{loss.eval()}], 权重为{weights.eval()}, 偏置为{bias.eval()}",
+                end="",
+                flush=True
+            )
+            # 合并变量
             summary = sess.run(merge)
-            file_writer.add_summary(summary, i)
-            if i % 10 == 0:
-                saver.save(sess, FLAGS.model_path)
+            # 记录日志
+            file_writer.add_summary(summary, epoch)
+            # 每 10 次记录记录一次模型
+            if epoch % 10 == 0:
+                saver.save(sess, MODEL_PATH)
     return None
 
 
 def main(argv):
-    print("这是main函数")
-    print(argv)
-    print(FLAGS.model_path)
     linear_regression()
 
 

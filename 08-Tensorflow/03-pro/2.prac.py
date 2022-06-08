@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # @Date        : 2022-06-07 10:52:51
-# @Author      : junsircoding
-# @File        : 08-Tensorflow/tensorflow练习/教程1/2.prac.py
+# @Author      : junsircoding@gmail.com
+# @File        : 08-Tensorflow/03-pro/2.prac.py
 # @Info        : 
-# @Last Edited : 2022-06-07 17:46:48
+# @Last Edited : 2022-06-08 18:04:57
 
 """
 TensorFlow 程序的快速概述

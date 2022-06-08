@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # @Date        : 2022-06-07 10:27:31
-# @Author      : junsircoding
+# @Author      : junsircoding@gmail.com
 # @File        : 01-Scripts/00-生成模块开头注释.py
 # @Info        : 
-# @Last Edited : 2022-06-07 17:46:48
+# @Last Edited : 2022-06-08 18:04:57
 
 import os
 import re
@@ -69,7 +69,7 @@ for file_abs_path in py_file_list:
     line_0 = "#!/usr/bin/env python"
     line_1 = "# -*- coding: utf-8 -*-"
     line_2 = f"# @Date        : {create_time}"
-    line_3 = "# @Author      : junsircoding"
+    line_3 = "# @Author      : junsircoding@gmail.com"
     line_4 = f"# @File        : {rel_file_name}"
     line_5 = "# @Info        : "
     line_6 = f"# @Last Edited : {current_time}"

@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # @Date        : 2022-06-07 10:52:51
-# @Author      : junsircoding
-# @File        : 08-Tensorflow/1-demo.py
+# @Author      : junsircoding@gmail.com
+# @File        : 08-Tensorflow/00-pro/main.py
 # @Info        : 
-# @Last Edited : 2022-06-07 17:46:48
+# @Last Edited : 2022-06-08 18:04:57
 
 # Load libraries
 from pandas import read_csv
