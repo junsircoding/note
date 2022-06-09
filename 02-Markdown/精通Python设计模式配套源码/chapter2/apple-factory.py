@@ -4,7 +4,7 @@
 # @Author      : junsircoding@gmail.com
 # @File        : 02-Markdown/精通Python设计模式配套源码/chapter2/apple-factory.py
 # @Info        : 
-# @Last Edited : 2022-06-08 18:04:57
+# @Last Edited : 2022-06-09 14:57:29
 
 MINI14 = '1.4GHz Mac mini'
 

@@ -4,7 +4,7 @@
 # @Author      : junsircoding@gmail.com
 # @File        : 01-Scripts/00-生成模块开头注释.py
 # @Info        : 
-# @Last Edited : 2022-06-08 18:04:57
+# @Last Edited : 2022-06-09 14:57:29
 
 import os
 import re
@@ -34,11 +34,11 @@ pattern_list = [
 ]
 
 current_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())
-create_time = current_time
-file_info = ""
 
 # 记录每个文件内容, 去除前七行的注释内容
 for file_abs_path in py_file_list:
+    create_time = current_time
+    file_info = ""
     print(f"处理文件: {file_abs_path}")
     # 跳过当前文件
     # if file_abs_path == os.path.abspath(__file__):

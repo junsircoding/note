@@ -4,7 +4,7 @@
 # @Author      : junsircoding@gmail.com
 # @File        : 10-Tornato/main.py
 # @Info        : 
-# @Last Edited : 2022-06-08 18:04:57
+# @Last Edited : 2022-06-09 14:57:29
 
 # coding:utf-8
 
