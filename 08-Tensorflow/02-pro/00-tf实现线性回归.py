@@ -3,7 +3,7 @@
 # @Date        : 2022-06-07 10:52:51
 # @Author      : junsircoding@gmail.com
 # @File        : 08-Tensorflow/02-pro/00-tf实现线性回归.py
-# @Info        : 
+# @Info        :
 # @Last Edited : 2022-06-09 14:57:29
 
 """
@@ -36,39 +36,41 @@ def linear_regression():
     导公式之后的正确答案是 y_true
     他们都是 100x1 的一维矩阵
     """
+    origin_weight = [[0.8]] # 初始权重
+    origin_bia = [[0.7]] # 初始偏置
     with tf.variable_scope("original_data"):
         x = tf.random_normal(shape=(100, 1), mean=2, stddev=2)
-        y_true = tf.matmul(x, [[0.8]]) + 0.7
+        y_true = tf.matmul(x, origin_weight) + origin_bia
 
     """
     建立线性模型：
-    y = weights * x + bias
-    目标: 求出权重 weights 和偏置 bias
-    随机初始化 weights 和 bias
+    y = weight * x + bias
+    目标: 求出权重 weight 和偏置 bias
+    随机初始化 weight 和 bias
     """
     with tf.variable_scope("linear_model"):
-        weights = tf.Variable(initial_value=tf.random_normal(shape=(1, 1)))
+        weight = tf.Variable(initial_value=tf.random_normal(shape=(1, 1)))
         bias = tf.Variable(initial_value=tf.random_normal(shape=(1, 1)))
-        y_predict = tf.matmul(x, weights) + bias
+        y_predict = tf.matmul(x, weight) + bias
 
     """
     确定损失函数(预测值与真实值之间的误差)-均方误差
     """
-    with tf.variable_scope("loss"):
-        loss = tf.reduce_mean(tf.square(y_predict - y_true))
+    with tf.variable_scope("invalid"):
+        invalid = tf.reduce_mean(tf.square(y_predict - y_true))
 
     """
     梯度下降优化损失：需要指定学习率(超参数)
-    weights_2 = weights_1 - 学习率*(方向)
+    weight_2 = weight_1 - 学习率*(方向)
     bias_2 = bias_1 - 学习率*(方向)
     """
     with tf.variable_scope("gd_optimizer"):
         optimizer = tf.train.GradientDescentOptimizer(
-            learning_rate=0.01).minimize(loss)
+            learning_rate=0.01).minimize(invalid)
 
     # 收集变量
-    tf.summary.scalar("loss", loss)
-    tf.summary.histogram("weights", weights)
+    tf.summary.scalar("invalid", invalid)
+    tf.summary.histogram("weight", weight)
     tf.summary.histogram("bias", bias)
     # 合并变量
     merge = tf.summary.merge_all()
@@ -81,7 +83,7 @@ def linear_regression():
     with tf.Session() as sess:
         # 初始化变量
         sess.run(init)
-        print("随机初始化的权重为[%f], 偏置为[%f]" % (weights.eval(), bias.eval()))
+        print("随机初始化的权重为[%f], 偏置为[%f]" % (weight.eval(), bias.eval()))
         # 当存在 checkpoint 文件，就加载模型
         if os.path.exists(f"./{MODEL_PATH}/checkpoint"):
             saver.restore(sess, MODEL_PATH)
@@ -92,10 +94,7 @@ def linear_regression():
         for epoch in range(100):
             sess.run(optimizer)
             print(
-                "\r" +
-                f"第[{epoch:2}]步的误差为[{loss.eval()}], 权重为{weights.eval()}, 偏置为{bias.eval()}",
-                end="",
-                flush=True
+                f"第[{epoch:2}]步的误差为[{invalid.eval()}], 权重为{weight.eval()}, 偏置为{bias.eval()}"
             )
             # 合并变量
             summary = sess.run(merge)
