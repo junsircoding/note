@@ -4,7 +4,7 @@
 # @Author      : junsircoding@gmail.com
 # @File        : 08-Tensorflow/02-pro/01-线性回归面向对象方式.py
 # @Info        : 
-# @Last Edited : 2022-06-09 14:57:29
+# @Last Edited : 2022-06-12 17:30:37
 
 # 使用 tensorflow 1.x
 import tensorflow._api.v2.compat.v1 as tf

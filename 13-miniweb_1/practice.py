@@ -4,7 +4,7 @@
 # @Author      : junsircoding@gmail.com
 # @File        : 13-miniweb_1/practice.py
 # @Info        : 
-# @Last Edited : 2022-06-09 14:57:29
+# @Last Edited : 2022-06-12 17:30:37
 
 for i in range(59):
     print('%s:爱好%s' % (i, i))
