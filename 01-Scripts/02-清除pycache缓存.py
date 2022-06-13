@@ -4,7 +4,7 @@
 # @Author      : junsircoding@gmail.com
 # @File        : 01-Scripts/02-清除pycache缓存.py
 # @Info        : 
-# @Last Edited : 2022-06-12 17:30:37
+# @Last Edited : 2022-06-13 11:11:05
 
 """清除 __pycache__ 缓存"""
 import os
