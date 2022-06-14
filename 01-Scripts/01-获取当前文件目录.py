@@ -4,7 +4,7 @@
 # @Author      : junsircoding@gmail.com
 # @File        : 01-Scripts/01-获取当前文件目录.py
 # @Info        : 
-# @Last Edited : 2022-06-13 11:11:05
+# @Last Edited : 2022-06-14 22:22:27
 
 import os
 import sys

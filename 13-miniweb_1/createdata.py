@@ -4,7 +4,7 @@
 # @Author      : junsircoding@gmail.com
 # @File        : 13-miniweb_1/createdata.py
 # @Info        : 
-# @Last Edited : 2022-06-13 11:11:05
+# @Last Edited : 2022-06-14 22:22:27
 
 # 创建MiniWeb项目第一步：创建数据库
 # 用pymysql方式导入数据

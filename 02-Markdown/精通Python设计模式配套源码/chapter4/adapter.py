@@ -4,7 +4,7 @@
 # @Author      : junsircoding@gmail.com
 # @File        : 02-Markdown/精通Python设计模式配套源码/chapter4/adapter.py
 # @Info        : 
-# @Last Edited : 2022-06-13 11:11:05
+# @Last Edited : 2022-06-14 22:22:27
 
 from external import Synthesizer, Human
 

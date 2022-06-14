@@ -3,8 +3,8 @@
 # @Date        : 2022-06-09 09:48:25
 # @Author      : junsircoding@gmail.com
 # @File        : 08-Tensorflow/02-pro/02-线性回归面向对象2.py
-# @Info        :
-# @Last Edited : 2022-06-13 11:11:05
+# @Info        : 
+# @Last Edited : 2022-06-14 22:22:27
 
 """
 +------------------+     +-----------------+     +-------+
