@@ -4,7 +4,7 @@
 # @Author      : junsircoding@gmail.com
 # @File        : 02-Markdown/精通Python设计模式配套源码/chapter8/mvc.py
 # @Info        : 
-# @Last Edited : 2022-06-14 22:22:27
+# @Last Edited : 2022-06-19 21:07:34
 
 quotes = ('A man is not complete until he is married. Then he is finished.',
           'As I said before, I never repeat myself.',

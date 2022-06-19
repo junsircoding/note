@@ -4,7 +4,7 @@
 # @Author      : junsircoding@gmail.com
 # @File        : 01-Scripts/10-flask接收post参数方式.py
 # @Info        : 
-# @Last Edited : 2022-06-14 22:22:27
+# @Last Edited : 2022-06-19 21:07:34
 
 from flask import Flask
 from flask import request
